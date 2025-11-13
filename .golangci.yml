@@ -1,21 +1,23 @@
+version: "2"
 run:
-  timeout: 5m
   tests: true
-
 linters:
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
   enable:
-    - govet
-    - errcheck
-    - staticcheck
     - gofmt
     - goimports
-    - structcheck
-    - unused
-    - deadcode
-
-linters-settings:
-  gofmt:
-    simplify: true
-
-issues:
-  exclude-use-default: false
+  settings:
+    gofmt:
+      simplify: true
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
