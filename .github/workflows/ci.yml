@@ -16,9 +16,7 @@ jobs:
         with:
           go-version: stable
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v8
-        with:
-          version: v2.1
+        uses: golangci/golangci-lint-action@v9.0.0
 
   frontend:
     name: Frontend Lint & Format
